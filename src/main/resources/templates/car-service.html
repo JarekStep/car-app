@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Add Car</h1>
-<form th:action="@{/cars/carService}" method="post">
+<form th:action="@{/cars}" method="post">
     Mark:
     <input type="text" name="mark">
     Model:
@@ -24,7 +24,7 @@
 <br>
 <br>
 <h1>Update Car</h1>
-<form th:action="@{/cars/carService}" method="post">
+<form th:action="@{/cars}" method="post">
     Id:
     <input type="text" name="id">
     Mark:
@@ -44,7 +44,7 @@
 <br>
 <br>
 <h1>Delete Car</h1>
-<form th:action="@{/cars/carService}" method="post">
+<form th:action="@{/cars}" method="post">
     Id:
     <input type="text" name="id">
     <input type="submit" value="Delete Car!">

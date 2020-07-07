@@ -37,11 +37,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().disable();
         http.httpBasic().and().authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/cars/*").authenticated()
-                .antMatchers(HttpMethod.POST, "/cars/carService").hasRole("ADMIN")
-                .antMatchers(HttpMethod.DELETE, "/cars/carService").hasRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, "/cars/carService").hasAnyRole("ADMIN", "MODERATOR")
+                .antMatchers(HttpMethod.POST, "/cars").hasAnyRole("ADMIN", "MODERATOR")
+                .antMatchers(HttpMethod.DELETE, "/cars").hasRole("ADMIN")
+                .antMatchers(HttpMethod.PUT, "/cars").hasAnyRole("ADMIN", "MODERATOR")
                 .and()
-                .formLogin().permitAll().defaultSuccessUrl("/cars/getAll")
+                .formLogin().permitAll().defaultSuccessUrl("/cars")
                 .and()
                 .logout().permitAll();
 

@@ -19,7 +19,7 @@ public class CarController {
         this.carService = carService;
     }
 
-    @GetMapping("/getAll")
+    @GetMapping
     @ResponseBody
     public Iterable<Car> getAll() {
         return carService.findAll();
@@ -32,25 +32,25 @@ public class CarController {
     }
 
     @GetMapping("/carService")
-    public String addCar() {
+    public String showMethods() {
         return "car-service";
     }
 
-    @PostMapping("/carService")
+    @PostMapping
     public String addCar(Car car) {
         carService.save(car);
-        return "car-service";
+        return "redirect:/cars/carService";
     }
 
-    @PutMapping("/carService")
+    @PutMapping
     public String updateCar(Car car) {
         carService.save(car);
-        return "car-service";
+        return "redirect:/cars/carService";
     }
 
-    @DeleteMapping("/carService")
+    @DeleteMapping
     public String delete(Car car) {
         carService.delete(car);
-        return "car-service";
+        return "redirect:/cars/carService";
     }
 }
